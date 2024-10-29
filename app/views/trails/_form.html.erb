@@ -1,0 +1,17 @@
+<%= form_with(model: trail) do |form| %>
+  <% if trail.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trail.errors.count, "error") %> prohibited this trail from being saved:</h2>
+
+      <ul>
+        <% trail.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
